@@ -1,0 +1,29 @@
+<?php
+$dataArray = [
+    "nama" => "Andi",
+    "umur" => 25,
+    "kota" => "Jakarta"
+];
+
+$jsonData = json_encode($dataArray);
+
+echo "Hasil JSON Encode: " . $jsonData . "<br>";
+?>
+
+<?php
+$jsonString = '{"nama":"Andi","umur":25,"kota":"Jakarta"}';
+
+$dataObject = json_decode($jsonString);
+
+echo "Akses dari Object:<br>";
+echo "Nama: " . $dataObject->nama . "<br>";
+echo "Umur: " . $dataObject->umur . "<br>";
+echo "Kota: " . $dataObject->kota . "<br>";
+
+$dataArray = json_decode($jsonString, true);
+
+echo "Akses dari Array:<br>";
+echo "Nama: " . $dataArray["nama"] . "<br>";
+echo "Umur: " . $dataArray["umur"] . "<br>";
+echo "Kota: " . $dataArray["kota"] . "<br>";
+?>
